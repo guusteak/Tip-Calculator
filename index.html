@@ -9,27 +9,53 @@
   <title>Frontend Mentor | Tip calculator app</title>
 
 </head>
-<body>
+<body class="page">
+  <header class="page__header">
+    <div class="container">
 
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
+    </div>
+  </header>
+  <main class="container">
+    <section class="calculate">
+      <div class="calculate__header">
+        <h1 class="calculate__title">Bill</h1>
+        <input type="text" class="calculate__value" placeholder="0">
+        <img class="calculate__image" src="images/icon-dollar.svg">
+      </div>
+      <div class="calculate__main">
+        <h2 class="calculate__title">Select Tip %</h2>
+        <div class="buttons">
+          <div class="button">5%</div>
+          <div class="button">10%</div>
+          <div class="button">15%</div>
+          <div class="button">25%</div>
+          <div class="button">50%</div>
+          <div class="button button--custom">Custom</div>
+        </div>
+      </div>
+      <div class="calculate__footer">
+        <h2 class="calculate__title">Number of People</h2>
+        <input type="text" class="calculate__value" placeholder="0">
+        <img src="images/icon-person.svg" class="calculate__image">
+      </div>
+    </section>
+    <div class="effect">
+      <div class="effect__per-person">
+        <div class="per-person__left">
+          <h3 class="per-person__title">Tip Amount</h3>
+          <p class="per-person__lower">/ person</p>
+        </div>
+        <p class="per-person__right">$0.00</p>
+      </div>
+      <div class="effect__per-person">
+        <div class="per-person__left">
+          <h3 class="per-person__title">Total</h3>
+          <p class="per-person__lower">/ person</p>
+        </div>
+        <p class="per-person__right">$0.00</p>
+      </div>
+      <div class="effect__button">RESET</div>
+    </div>
+  </main>
 </body>
 </html>
