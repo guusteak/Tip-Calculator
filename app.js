@@ -1,6 +1,9 @@
 console.log("Hello world");
 for(let i = 0; i<=5; i++){
     let pass = (passed) =>{
+        for(let j=0; j<=5; j++){
+            document.getElementsByClassName("button")[j].classList.remove("button--active");
+        }
         switch(i){
             case 0:
             case 1:
@@ -10,10 +13,12 @@ for(let i = 0; i<=5; i++){
                 passed = document.getElementsByClassName("button")[i].innerHTML;
                 console.log(passed);
                 count(passed);
+                document.getElementsByClassName("button")[i].classList.add("button--active");
                 break;
             case 5:
                 passed = document.getElementsByClassName("button")[i].value;
                 count(passed);
+                document.getElementsByClassName("button")[i].classList.add("button--active");
                 break;
         }
     }

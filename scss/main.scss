@@ -132,6 +132,9 @@ $breakpoints: (
         color: $Scyan;
     }
     border-radius: 5px;
+    &--active{
+        background-color: cyan;
+    }
 }
 .button:nth-of-type(2){
     grid-column-start: 3;
@@ -151,3 +154,4 @@ $breakpoints: (
     grid-row-start: 3;
     grid-column-start: 5;
 }
+
