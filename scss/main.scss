@@ -23,16 +23,131 @@ $breakpoints: (
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: $font, sans-serif;
 }
 
 .page{
+    background: linear-gradient(90deg, $dcyan, $lgcyan);
     height: 100vh;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
     flex-direction: column;
     @include viewport(medium){
-        font-size: 3rem;
+        font-size: 1rem;
     }
+}
+.container{
+    background-color: $Scyan;
+    border-radius: 30px;
+    padding: 20px;
+    width: 50%;
+    display: flex;
+}
+
+.calculate{
+    width: 50%;
+    padding:0 15px;
+    &__value{
+        width: 100%;
+        background-color: $dgcyan;
+        text-align: right;
+        padding-right: 5%;
+        height: 30px;
+        color: $Scyan;
+        &::placeholder{
+            color: $Scyan;
+        }
+    }
+    &__header{
+        position: relative;
+    }
+    &__footer{
+        position: relative;
+    }
+    &__image{
+        position: absolute;
+        top: 35px;
+        left: 5px;
+    }
+    &__title{
+        font-size: 1.2rem;
+    }
+
+}
+
+.effect{
+    color: $Scyan;
+    width: 50%;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    background-color: $dcyan;
+    &__per-person{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__button{
+        width: 90%;
+        bottom: 10px;
+        position: absolute;
+        display: block;
+        margin: auto;
+        text-align: center;
+        background-color: lighten(cyan, 10%);
+        border-radius: 5px;
+        color: black;
+    }
+}
+.per-person{
+    &__lower{
+        font-size: 0.8rem;
+        color: $gcyan;
+    }
+    &__right{
+        font-size: 2rem;
+        color: lighten(cyan, 10%);
+    }
+}
+
+.buttons{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 5% 30% 5% 30%;
+    grid-template-rows: 45% 1fr 45%;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    text-align: center;
+    color: $Scyan;
+    background-color: $dcyan;
+    &::placeholder{
+        color: $Scyan;
+    }
+    border-radius: 5px;
+}
+.button:nth-of-type(2){
+    grid-column-start: 3;
+}
+.button:nth-of-type(3){
+    grid-column-start: 5;
+}
+.button:nth-of-type(4){
+    grid-row-start: 3;
+    grid-column-start: 1;
+}
+.button:nth-of-type(5){
+    grid-row-start: 3;
+    grid-column-start: 3;
+}
+.button--custom{
+    grid-row-start: 3;
+    grid-column-start: 5;
 }
