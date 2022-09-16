@@ -19,14 +19,16 @@
 @media (min-width: 800px) {
   .page {
     font-size: 1rem;
+    overflow: hidden;
   }
 }
 
 .container {
+  opacity: 0.9;
   background-color: hsl(0deg, 0%, 100%);
   border-radius: 30px;
   padding: 20px;
-  width: 50%;
+  width: 60%;
   display: flex;
 }
 @media (max-width: 500px) {
@@ -46,10 +48,70 @@
 @media (min-width: 800px) {
   .container {
     flex-direction: row;
-    width: 50%;
+    width: 60%;
   }
 }
 
+.icon {
+  z-index: -1;
+  opacity: 0.3;
+  position: absolute;
+  left: 100;
+  transform: scale(7);
+}
+.icon__dollar {
+  top: 20%;
+  animation: dol 10s ease-in infinite alternate, rotate 12s infinite linear alternate-reverse;
+}
+.icon__emoji {
+  left: 10%;
+  -webkit-animation: dol 5s ease-in-out infinite alternate, rotate 30s ease-in infinite alternate;
+          animation: dol 5s ease-in-out infinite alternate, rotate 30s ease-in infinite alternate;
+}
+.icon__wallet {
+  bottom: 10%;
+  -webkit-animation: dol 5s ease-in-out infinite alternate-reverse, rotate 15s infinite linear alternate;
+          animation: dol 5s ease-in-out infinite alternate-reverse, rotate 15s infinite linear alternate;
+}
+.icon__receipt {
+  top: 70%;
+  left: 80%;
+  animation: dol 10s ease-in infinite alternate-reverse, rotate 20s ease-in-out alternate-reverse infinite;
+}
+
+@-webkit-keyframes dol {
+  0% {
+    transform: scale(6) translateX(10%) translateY(20%);
+  }
+  100% {
+    transform: scale(7) translateX(100%) translateY(100%);
+  }
+}
+
+@keyframes dol {
+  0% {
+    transform: scale(6) translateX(10%) translateY(20%);
+  }
+  100% {
+    transform: scale(7) translateX(100%) translateY(100%);
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
 .calculate {
   width: 50%;
   padding: 0 15px;
@@ -141,7 +203,7 @@
   color: hsl(184deg, 14%, 56%);
 }
 .per-person__right {
-  font-size: 2rem;
+  font-size: 1.3rem;
   color: #33ffff;
   min-width: 100px;
 }
