@@ -96,7 +96,7 @@ $breakpoints: (
         }
     }
     &__title{
-        font-size: 1.2rem;
+        font-size: .8rem;
     }
     @include viewport(xsmall){
         width: 100%;
@@ -152,6 +152,10 @@ $breakpoints: (
 }
 
 .button{
+    &:hover{
+        cursor: pointer;
+        background-color: cyan;
+    }
     display: flex;
     justify-content: center;
     align-items: center;

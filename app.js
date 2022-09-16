@@ -26,26 +26,53 @@ for(let i = 0; i<=5; i++){
 }
 function count (passedargument) {
     if(passedargument > "0"){
-        if((document.getElementsByClassName("calculate__value")[0].value != null && document.getElementsByClassName("calculate__value")[0].value >0 )&&(document.getElementsByClassName("calculate__value")[1].value!=null && document.getElementsByClassName("calculate__value")[1].value >0 )){
+        if((document.getElementsByClassName("calculate__value")[0].value != "0" && document.getElementsByClassName("calculate__value")[0].value >0 )&&(document.getElementsByClassName("calculate__value")[1].value!="0" && document.getElementsByClassName("calculate__value")[1].value >0 )){
             console.log("warunek spełniony")
             let csh = document.getElementsByClassName("calculate__value")[0].value;
             let ppl = document.getElementsByClassName("calculate__value")[1].value;
-            let total =(parseInt(csh) + (parseInt(csh) * parseInt(passedargument) /100))/parseInt(ppl);
-            let tip = (parseInt(csh)*parseInt(passedargument))/100 /parseInt(ppl);        
-            console.log(typeof(csh))
-            console.log(typeof(passedargument));
-            console.log(typeof(ppl))
+            let total =(parseFloat(csh) + (parseFloat(csh) * parseFloat(passedargument) /100))/parseFloat(ppl);
+            let tip = (parseFloat(csh)*parseFloat(passedargument))/100 /parseFloat(ppl);        
+            tip = parseFloat(tip).toFixed(3);
+            total = parseFloat(total).toFixed(3);
+            console.log(tip);
+            console.log(total);
             document.getElementsByClassName("per-person__right")[1].innerHTML = "$ "+total;
             document.getElementsByClassName("per-person__right")[0].innerHTML = "$ "+tip;
         }
+        else{
+            if(document.getElementsByClassName("calculate__value")[0].value == "0"){
+                document.getElementsByClassName("calculate__value")[0].value = "This value cant be zero.";
+            }
+            else if(document.getElementsByClassName("calculate__value")[1].value == "0"){
+                document.getElementsByClassName("calculate__value")[1].value = "This value cant be zero.";
+            }
+            else{
+                console.log("Something went wrong");
+            }
+        }
     }
     function fur (){
-        let csh = document.getElementsByClassName("calculate__value")[0].value;
-        let ppl = document.getElementsByClassName("calculate__value")[1].value;
-        let total =(parseInt(csh) + (parseInt(csh) * parseInt(passedargument) /100))/parseInt(ppl);
-        document.getElementsByClassName("per-person__right")[1].innerHTML = "$ "+total;
-        let tip = (parseInt(csh)*parseInt(passedargument))/100 /parseInt(ppl);
-        document.getElementsByClassName("per-person__right")[0].innerHTML = "$ "+tip;
+        if(document.getElementsByClassName("calculate__value")[0].value == "0"){
+            document.getElementsByClassName("calculate__value")[0].value = "This value cant be zero.";
+            document.getElementsByClassName("per-person__right")[1].innerHTML = "$ 0";
+            document.getElementsByClassName("per-person__right")[0].innerHTML = "$ 0";
+        }
+        else if(document.getElementsByClassName("calculate__value")[1].value == "0"){
+            document.getElementsByClassName("calculate__value")[1].value = "This value cant be zero.";
+            document.getElementsByClassName("per-person__right")[1].innerHTML = "$ 0";
+            document.getElementsByClassName("per-person__right")[0].innerHTML = "$ 0";
+        }
+        else{
+            let csh = document.getElementsByClassName("calculate__value")[0].value;
+            let ppl = document.getElementsByClassName("calculate__value")[1].value;
+            let total =(parseFloat(csh) + (parseFloat(csh) * parseFloat(passedargument) /100))/parseFloat(ppl);
+            let tip = (parseFloat(csh)*(parseFloat(passedargument)/100)) /parseFloat(ppl);
+            tip = parseFloat(tip).toFixed(3);
+            total = parseFloat(total).toFixed(3);
+            document.getElementsByClassName("per-person__right")[1].innerHTML = "$ "+total;
+            document.getElementsByClassName("per-person__right")[0].innerHTML = "$ "+tip;
+        }
+        
     }
     //We add listener after we pass a % value
     let amount = document.getElementsByClassName("calculate__value")[0];
