@@ -48,7 +48,7 @@
 @media (min-width: 800px) {
   .container {
     flex-direction: row;
-    width: 60%;
+    width: 50%;
   }
 }
 
