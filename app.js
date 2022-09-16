@@ -47,7 +47,7 @@ function count (passedargument) {
         let tip = (parseInt(csh)*parseInt(passedargument))/100 /parseInt(ppl);
         document.getElementsByClassName("per-person__right")[0].innerHTML = "$ "+tip;
     }
-    //Dodajemy listenera dopiero pozniej jak juz przekazemy jakis procencik i jest lux
+    //We add listener after we pass a % value
     let amount = document.getElementsByClassName("calculate__value")[0];
     amount.addEventListener("input", fur)
     let people = document.getElementsByClassName("calculate__value")[1];

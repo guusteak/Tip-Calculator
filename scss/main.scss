@@ -1,7 +1,7 @@
 @import 'variables';
 $breakpoints: (
     xsmall: 'max-width: 500px',
-    small: 'min-width: 640px',
+    small: 'min-width: 500px',
     medium: 'min-width: 800px',
     large: 'min-width: 1024px',
     xlarge: 'min-width: 1200px',
@@ -51,8 +51,13 @@ $breakpoints: (
         width: 80%;
         min-width: 260px;
     }
+    @include viewport(small){
+        width: 80%;
+        min-width: 450px;
+    }
     @include viewport(medium){
         flex-direction: row;
+        width: 50%;
     }
 }
 
@@ -78,8 +83,17 @@ $breakpoints: (
     }
     &__image{
         position: absolute;
-        top: 35px;
         left: 5px;
+        //tbh viewports there are just useless but while i was working on this i was figuring out how this works xD
+        @include viewport(small){
+            bottom: 7px;
+        }
+        @include viewport(medium){
+            bottom: 6px;
+        }
+        @include viewport(xsmall){
+            bottom: 6px;
+        }
     }
     &__title{
         font-size: 1.2rem;
@@ -126,6 +140,7 @@ $breakpoints: (
     &__right{
         font-size: 2rem;
         color: lighten(cyan, 10%);
+        min-width: 100px;
     }
 }
 

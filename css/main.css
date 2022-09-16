@@ -37,9 +37,16 @@
     min-width: 260px;
   }
 }
+@media (min-width: 500px) {
+  .container {
+    width: 80%;
+    min-width: 450px;
+  }
+}
 @media (min-width: 800px) {
   .container {
     flex-direction: row;
+    width: 50%;
   }
 }
 
@@ -72,8 +79,22 @@
 }
 .calculate__image {
   position: absolute;
-  top: 35px;
   left: 5px;
+}
+@media (min-width: 500px) {
+  .calculate__image {
+    bottom: 7px;
+  }
+}
+@media (min-width: 800px) {
+  .calculate__image {
+    bottom: 6px;
+  }
+}
+@media (max-width: 500px) {
+  .calculate__image {
+    bottom: 6px;
+  }
 }
 .calculate__title {
   font-size: 1.2rem;
@@ -122,6 +143,7 @@
 .per-person__right {
   font-size: 2rem;
   color: #33ffff;
+  min-width: 100px;
 }
 
 .buttons {
