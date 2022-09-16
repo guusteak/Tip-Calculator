@@ -30,17 +30,21 @@ function count (passedargument) {
             console.log("warunek spełniony")
             let csh = document.getElementsByClassName("calculate__value")[0].value;
             let ppl = document.getElementsByClassName("calculate__value")[1].value;
-            let tip =(parseInt(csh) + (parseInt(csh) * parseInt(passedargument) /100))/parseInt(ppl);
+            let total =(parseInt(csh) + (parseInt(csh) * parseInt(passedargument) /100))/parseInt(ppl);
+            let tip = (parseInt(csh)*parseInt(passedargument))/100 /parseInt(ppl);        
             console.log(typeof(csh))
             console.log(typeof(passedargument));
             console.log(typeof(ppl))
+            document.getElementsByClassName("per-person__right")[1].innerHTML = "$ "+total;
             document.getElementsByClassName("per-person__right")[0].innerHTML = "$ "+tip;
         }
     }
     function fur (){
         let csh = document.getElementsByClassName("calculate__value")[0].value;
         let ppl = document.getElementsByClassName("calculate__value")[1].value;
-        let tip =(parseInt(csh) + (parseInt(csh) * parseInt(passedargument) /100))/parseInt(ppl);
+        let total =(parseInt(csh) + (parseInt(csh) * parseInt(passedargument) /100))/parseInt(ppl);
+        document.getElementsByClassName("per-person__right")[1].innerHTML = "$ "+total;
+        let tip = (parseInt(csh)*parseInt(passedargument))/100 /parseInt(ppl);
         document.getElementsByClassName("per-person__right")[0].innerHTML = "$ "+tip;
     }
     //Dodajemy listenera dopiero pozniej jak juz przekazemy jakis procencik i jest lux
@@ -50,3 +54,11 @@ function count (passedargument) {
     people.addEventListener("input", fur); 
 }
 
+let reset = document.getElementsByClassName("effect__button")[0];
+reset.addEventListener("click", clear);
+function clear() {
+    document.getElementsByClassName("calculate__value")[0].value = "0";
+    document.getElementsByClassName("calculate__value")[1].value = "0";
+    document.getElementsByClassName("per-person__right")[0].innerHTML = "$ 0";
+    document.getElementsByClassName("per-person__right")[1].innerHTML = "$ 0";
+}

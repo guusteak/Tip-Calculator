@@ -1,6 +1,6 @@
 @import 'variables';
 $breakpoints: (
-    xsmall: 'min-width: 460px',
+    xsmall: 'max-width: 500px',
     small: 'min-width: 640px',
     medium: 'min-width: 800px',
     large: 'min-width: 1024px',
@@ -45,6 +45,15 @@ $breakpoints: (
     padding: 20px;
     width: 50%;
     display: flex;
+    @include viewport(xsmall){
+        flex-direction: column;
+        gap: 10px;
+        width: 80%;
+        min-width: 260px;
+    }
+    @include viewport(medium){
+        flex-direction: row;
+    }
 }
 
 .calculate{
@@ -75,6 +84,9 @@ $breakpoints: (
     &__title{
         font-size: 1.2rem;
     }
+    @include viewport(xsmall){
+        width: 100%;
+    }
 
 }
 
@@ -100,6 +112,10 @@ $breakpoints: (
         background-color: lighten(cyan, 10%);
         border-radius: 5px;
         color: black;
+    }
+    @include viewport(xsmall){
+        width: 100%;
+        min-height: 180px;
     }
 }
 .per-person{

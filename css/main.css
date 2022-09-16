@@ -29,6 +29,19 @@
   width: 50%;
   display: flex;
 }
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    min-width: 260px;
+  }
+}
+@media (min-width: 800px) {
+  .container {
+    flex-direction: row;
+  }
+}
 
 .calculate {
   width: 50%;
@@ -65,6 +78,11 @@
 .calculate__title {
   font-size: 1.2rem;
 }
+@media (max-width: 500px) {
+  .calculate {
+    width: 100%;
+  }
+}
 
 .effect {
   color: hsl(0deg, 0%, 100%);
@@ -89,6 +107,12 @@
   background-color: #33ffff;
   border-radius: 5px;
   color: black;
+}
+@media (max-width: 500px) {
+  .effect {
+    width: 100%;
+    min-height: 180px;
+  }
 }
 
 .per-person__lower {
